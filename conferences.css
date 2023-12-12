@@ -1,0 +1,252 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/*body*/
+h1, h2, h3 {
+    font-weight: 500;
+    font-size: 2em;
+    letter-spacing: 0.03em;
+}
+
+p {
+    line-height: 1.5em;
+    letter-spacing: 0.03em;
+
+}
+/*navigation*/
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    font-size: 1.2em;
+    letter-spacing: 1em;
+    padding: 0 2em 0;
+
+}
+.logo_image{
+    margin: 0 auto;
+}
+.logo_image img {
+    position: relative;
+    top: 50px;
+    height: 250px;
+    cursor: pointer;
+    transform: scale(1);
+}
+.contactus_details h3{
+    font-size: 1em;
+}
+
+.main_image_section {
+    text-align: center;
+}
+
+#conference_main {
+    background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.6)), url(images/conferences_main_img.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+
+.main_image_section {
+    width: 100%;
+    height: 700px;
+    position: relative;
+    top: -70px;
+    z-index: -1;
+    box-shadow: 5px 5px 25px #000;
+}
+
+.main_image_section h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    font-size: 7em;
+    color: #fff;
+    text-shadow: 5px 5px 25px #333333ae;
+}
+/*content*/
+.information_box video {
+    width: max(600px);
+}
+.information_boxco {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0.5em 5em 0.5em;
+}
+.text_sectionco {
+    padding: 0 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.media_section img {
+    width: max(600px);
+    box-shadow: 5px 5px 25px #000;
+    border-radius: 7px;
+}
+
+.text_section {
+    padding: 0 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+}
+
+
+.information_box:nth-of-type(3) {
+    flex-direction: row-reverse;
+}
+
+/*sub_footer*/
+.sub_footer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.2px 0 1px;
+    background: linear-gradient(to right, #3a0d08, #ae6d69);
+    margin-top: 3em;
+    color: #fff;
+    position: absolute;
+}
+
+.sub_footer img {
+    width: 250px;
+}
+.col {
+    width: 55%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.contactus_details {
+    padding: 10px;
+    margin-bottom: 60px;
+}
+.email-id{
+    width: fit-content;
+    border-bottom: 1px solid #fff;
+    margin: 10px 0;
+    cursor: pointer;
+
+}
+ul li{
+    list-style: none;
+    margin-bottom: 5px;
+}
+ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+.links{
+    width: fit-content;
+    border-bottom: 2px solid #fff;
+    margin: 30px 0;
+    border-radius: 2px;
+}
+.footer_right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.footer_social{
+    display: flex;
+    gap: 1em;
+    cursor: pointer;
+    
+}
+.footer_social img{
+    width: 20px;
+    height: 20px;
+    padding: 0.2px;
+}
+
+.media_section {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5em 2em 2em;
+}
+.media_section img {
+    width: 400px;
+    height: 300px;
+    box-shadow: 4px 4px 25px #000;
+    object-fit: cover;
+
+}
+
+.topbutton {
+    display: flex;
+    justify-content: center;
+}
+.topbutton button{
+    text-decoration: none;
+    font-size: 20px;
+}
+.topbutton button{
+    width: 300px;
+    background-color: #0a0d23;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    padding: 0.5em;
+    margin-top: 0.5em;
+}
+.topbutton button:hover{
+    background: linear-gradient(to right, #63010b, #ea81b2);;
+    cursor: pointer;
+}
+@media only screen and (max-width: 801px) {
+    .information_boxco {
+        width: 100%;
+        padding: 0;
+    } 
+}
+@media only screen and (max-width: 379px) {
+    .information_boxco {
+        width: 100%;
+        padding: 2em 0 2em;
+    } 
+    .text_sectionco p{
+        line-height: 1.2em;
+    }
+
+}
+@media only screen and (max-width: 972px) {
+    .main_image_section h1 {
+        font-size: 2.5em;
+    }
+    .information_boxco {
+        flex-direction: column;
+    }
+    .media_section img{
+        width: 100%;
+    }
+    .media_section {
+        padding: 1em 0.5em;
+    }
+    .sub_footer {
+        flex-wrap: wrap;
+    }
+    
+}
+

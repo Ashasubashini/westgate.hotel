@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>booking</title>
+    <link rel="stylesheet" href="main-styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="booking.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo_image">
+                <img src="images/website_logo.png" alt="logo">
+            </div>
+            <input type="checkbox" name="menu" id="menu_button">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="branches.html">Hotel Branches</a></li>
+                <li><a href="adventure.html">Adventure</a></li>
+                <div class="dropdown">
+                    <li>
+                        <a href="Restaurant.html">Reastaurant</a>
+                        <ul class="mobile_nav">
+                            <li><a href="weddings.html"> Weddings</a></li>
+                            <li><a href="conferences.html">Conferences</a></li>
+                        </ul>
+                    </li>
+                    <div class="dropdown_content">
+                        <li><a href="weddings.html">weddings</a></li>
+                        <li><a href="conferences.html">conferences</a></li>
+                    </div>
+                </div>
+                <li><a href="booking.html" id="active">Booking</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main_image_section" id="bookinge_main">
+        <h1>Book Now</h1>
+    </div>
+    <div class="information_box">
+        <div class="text_section">
+            <h2>We Reccomended to you</h2>
+            <p>The Westgate Hotel has a wide variety of accommodations to suit the tastes of every guest. We have it
+                all, from comfortable areas which make you feel at home to accommodations with breathtaking views of the
+                surrounding landscape. We have solutions to fit every budget and taste, whether you're seeking for an
+                opulent suite or a comfortable regular room. Your stay with us will be nothing short of fantastic
+                because our rooms were designed with both flair and comfort in mind. So, take a seat back, unwind, and
+                get set to enjoy the best vacation at Westgate Hotel!</p>
+        </div>
+        <div class="media_section">
+            <img src="images/booking_img_1_(2).webp" alt="image">
+        </div>
+    </div>
+
+    <div>
+        <fieldset>
+            <div class="container">
+                <div class="form_area">
+                    <h1>Book your Rooms</h1>
+                    <div class="fields">
+                        <div class="form_info">
+                            <div class="lable" id="FullName">
+                                Full name:-
+                            </div>
+                            <div class="input_fill">
+                                <input type="text" name="fullname" id="Fname" required>
+                            </div>
+                        </div>
+                        <div class="form_info">
+                            <div class="lable" id="E-mail" >
+                                E-mail:-
+                            </div>
+                            <div class="input_fill">
+                                <input type="email" name="email" id="Email" required>
+                            </div>
+                        </div>
+                        <div class="form_info">
+                            <div class="lable" id="phoneNumber">
+                                Phone:-
+                            </div>
+                            <div class="input_fill">
+                                <input type="text" name="phone" id="phone" required>
+                            </div>
+                        </div>
+                        <div class="form_info">
+                            <div class="lable" id="checkIn">
+                                Check-in date:-
+                            </div>
+                            <div class="input_fill">
+                                <input type="date" name="date" id="checkInDate">
+                            </div>
+                        </div>
+                        <div class="form_info">
+                            <div class="lable" id="checkOut">
+                                Check-out date:-
+                            </div>
+                            <div class="input_fill">
+                                <input type="date" name="date" id="checkOutDate">
+                            </div>
+                        </div>
+                        <div class="form_info">
+                            <div class="lable" id="RoomType">
+                                Select room type:-
+                            </div>
+                            <div>
+                                <p>
+                                    <label for="single">Single: Rs.25000.00</label>
+                                    <input type="checkbox" name="RoomType" id="single" value="SingleRoom">
+                                    <input type="number" id="SingleRoomNum" value="0" min="0">
+                                </p>
+                                <p>
+                                    <label for="double">Double: Rs.35000.00</label>
+                                    <input type="checkbox" name="RoomType" id="double" value="DoubleRoom">
+                                    <input type="number" id="DoubleRoomNum" value="0" min="0">
+                                </p>
+
+                                <p>
+                                    <label for="triple">Triple: Rs.40000.00</label>
+                                    <input type="checkbox" name="RoomType" id="triple" value="TripleRoom">
+                                    <input type="number" id="TripleRoomNum" value="0" min="0">
+                                </p>
+
+
+                            </div>
+                        </div>
+                        <div class="form_info">
+                            <div class="lable" id="childrensNumber">
+                                Number of childrens(above 5):-
+                            </div>
+                            <div class="input_fill">
+                                <input type="number" min="0" value="0" id="kids">
+                            </div>
+                        </div>
+
+
+                        <div class="form_info">
+                            <div class="lable" id="adultsNumber">
+                                Number of adults:-
+                            </div>
+                            <div class="input_fill">
+                                <input type="number" min="0" value="0" id="adults">
+                            </div>
+                        </div>
+                        <div class="form_info">
+                            <div class="lable" id="NumExtrabeds">
+                                Extra beds:-
+                            </div>
+                            <div class="input_fill">
+                                <input type="number" min="0" value="0" id="extraBeds">
+                            </div>
+                        </div>
+                        <div class="form_info">
+                            <div class="lable" id="requirementsLabel">
+                                Extra requirements:-
+                            </div>
+                            <div class="input_fill">
+                                <select id="requirements">
+                                    <option value="wifi">Wifi</option>
+                                    <option value="PoolView">Pool view</option>
+                                    <option value="GardenView">Garden view</option>
+
+                                </select>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <div>
+                        <label for="promocode">Enter promo code:</label>
+                        <input type="text" id="promocode">
+
+                    </div>
+                        
+
+                    <div id="submit" class="submit">
+                        <p>Total: <span id="output"></span></p>
+                        <button type="button" id="BookNow">Book Now</button>
+                    </div>
+                    <div class="output">
+                        <h4>Loyalty Points</h4>
+                        <p>Your Loyalty: <span id="loyaltyPoints"></span></p>
+                        <button type="button" id="loyalty">Check Loyalty</button>
+                    </div> 
+                    
+                    <div>
+                        <h1>Book your adventure (Diving)</h1>
+                    </div>
+                    <div class="fields">
+                        <div class="form_info">
+                            <div class="lable" id="Fullname">
+                                Full name:-
+                            </div>
+                            <div class="input_fill">
+                                <input type="text" name="fullname" id="fullName">
+                            </div>
+                        </div>
+                        <div class="form_info">
+                            <div class="lable" id="date">
+                                Date:-
+                            </div>
+                            <div class="input_fill">
+                                <input type="date" name="date" id="Date">
+                            </div>
+                        </div>
+                        <div class="form_info">
+                            <div class="lable">
+                                Number of Local Adults:-
+                            </div>
+                            <div class="input_fill">
+                                <input type="number" min="0" value="0" id="LocalAdults">
+                            </div>
+                        </div>
+                        <div class="form_info">
+                            <div class="lable">
+                                Number of Local Kids:-
+                            </div>
+                            <div class="input_fill">
+                                <input type="number" min="0" value="0" id="LocalKids">
+                            </div>
+                        </div>
+                        <div class="form_info">
+                            <div class="lable">
+                                Number of Foreign Adults:-
+                            </div>
+                            <div class="input_fill">
+                                <input type="number" min="0" value="0" id="ForeignAdults">
+                            </div>
+                        </div>
+                        <div class="form_info">
+                            <div class="lable">
+                                Number of Foreign Kids:-
+                            </div>
+                            <div class="input_fill">
+                                <input type="number" min="0" value="0" id="ForeignKids">
+                            </div>
+                        </div>
+                        <div class="form_info">
+                            <div class="lable">
+                                With Guide
+                            </div>
+                            <div class="input_fill">
+                                <input type="radio" name="Guide" id="With" value="WithGuide" checked>
+                            </div>
+                            <div class="lable">
+                                Without Guide
+                            </div>
+                            <div class="input_fill">
+                                <input type="radio" name="Guide" id="Without" value="WithoutGuide">
+                            </div>
+                        </div>
+                        <div class="form_info">
+                            <div class="lable" id="selectTime">
+                                Select a time period:-
+                            </div>
+                            <div>
+                                <p>
+                                    <label for="firstTime">09 AM to 11 AM</label>
+                                    <input type="radio" name="selectTime" value="09 AM to 11 AM">
+                                    
+                                </p>
+                                <p>
+                                    <label for="secondtTime">11 AM to 01 PM</label>
+                                    <input type="radio" name="selectTime" value="11 AM to 01 PM"> 
+                                </p>
+                                <p>
+                                    <label for="thirdTime">01 PM to 03 PM</label>
+                                    <input type="radio" name="selectTime" value="01 PM to 03 PM">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <p>Total: <span id="Adventureoutput"></span></p>
+                        <button type="button" id="AdventureBooknowBtn">Book Now</button>
+                    </div>
+                        
+            
+                </div>
+
+            </div>
+        </fieldset>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay"></div>
+
+    <!-- Popup container -->
+    <div id="popup">
+        <span id="closeBtn">&times;</span>
+        <div id="popupContent">
+            <img src="images/star.png" alt="star">
+            <h2>Loyalty points rewarded from this reservation</h2>
+            <p id="loyaltyData">
+
+            </p>
+            
+        </div>
+    </div>
+    <div id="BookNowPopup">
+        <span id="BookNowCloseBtn">&times;</span>
+        <div id="BookNowPopupContent">
+            <img src="images/website_logo.png" alt="logo">
+            <h2>THE WESTGATE IS RESERVED FOR YOU</h2>
+            <div>
+                <i class="fa-solid fa-calendar-days"></i>
+                <h4 id="bookingDate"></h4>
+                
+            </div>
+
+            <table id="dynamicTable">
+                <tbody>
+                    <!-- Data will be dynamically added here using JavaScript -->
+                </tbody>
+            </table>
+            <p>Thank you for your reservation</p>
+            <button class="likeBtn" id="roomAddFavBtn">
+                <i class="fa fa-heart"></i>
+                <span>Add To Favourite</span>
+            </button>
+
+        </div>
+    </div>
+    <div id="AdventurePopup">
+        <span id="AdventureCloseBtn">&times;</span>
+        <div id="AdventurePopupContent">
+            <img src="images/website_logo.png" alt="logo">
+            <h2>THE WESTGATE IS RESERVED FOR YOU</h2>
+            <div>
+                <i class="fa-solid fa-calendar-days"></i>
+                <h4 id="AdventureBookingDate"></h4>
+                
+            </div>
+            <table id="AdventureTable">
+                <tbody>
+                    <!-- Data will be dynamically added here using JavaScript -->
+                </tbody>
+            </table>
+            <p>Thank you for your reservation</p>
+            <button class="likeBtn" id="adventureAddFavBtn">
+                <i class="fa fa-heart"></i>
+                <span>Add To Favourite</span>
+            </button>
+
+        </div>
+    </div>
+   
+
+    
+    
+
+    <div>
+        <div class="image_flex">
+            <img src="images/booking_img_3(1).webp" alt="image">
+            <img src="images/booking_img_2_(1).webp" alt="image">
+            <img src="images/booking_main_image.webp" alt="image">
+        </div>
+    </div>
+    <footer>
+        <div class="col">
+            <div class="contactus_details">
+                <h3 class="links">THE WESTGATE</h3>
+                <p>Address: B23,Mirissa,Galle,Sri Lanka </p>
+                <P>Phone: 071-5379203</P>
+                <p class="email-id">Email: The Westgate@gmail.com</p>
+            </div>
+            <div class="contactus_details">
+                <h3 class="links">Check-in / Check-out</h3>
+                <p>open for 24hours</p>
+            </div>
+            <div class="contactus_details">
+                <h3 class="links">Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="branches.html">Hotel Branches</a></li>
+                    <li><a href="adventure.html">Adventure</a></li>
+                    <li><a href="Restaurant.html">Reastaurant</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                    <li><a href="weddings.html">Weddings</a></li>
+                    <li><a href="conferences.html">Conferences</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer_right">
+            <div class="right_side_section">
+                <img src="images/website_logo.png" alt="footer logo">
+            </div>
+            <div class="footer_social">
+                <img src="images/facebook.png" alt="icons">
+                <img src="images/instagram.png" alt="icons">
+                <img src="images/twitter.png" alt="icons">
+            </div>
+        </div>
+        <!--References-->
+
+        <!--Freepik. (n.d.). Freepik | Graphic Resources for everyone. https://www.freepik.com/(Accessed: 15 august 2023)-->
+        <!--Pexels. (n.d.). Free stock photos, Royalty free stock images & Copyright Free pictures · Pexels. https://www.pexels.com/(Accessed:18 august 2023)-->
+        
+    </footer>
+
+
+    
+
+    
+</body>
+
+</html>
