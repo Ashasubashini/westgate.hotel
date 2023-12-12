@@ -570,7 +570,7 @@ figure iframe {
 /*form*/
 .form_area {
     max-width: 700px;
-    height: 1300px;
+    height: 1400px;
     margin: 20px auto;
     padding:1em 2em 2em;
     border-radius: 10px;
@@ -683,6 +683,21 @@ figure iframe {
     padding: .2em;
 }
 #AdventureBooknowBtn:hover{
+    background-color: #000;
+    cursor: pointer;
+}
+#TotalBookingCost{
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #403e3e;
+    color: #fff;
+    font-size: 1em;
+    transition: all .3s;
+    border: none;
+    padding: .2em;
+}
+#TotalBookingCost:hover{
     background-color: #000;
     cursor: pointer;
 }
@@ -840,6 +855,55 @@ figure iframe {
 }
 
 #AdventureCloseBtn:hover {
+    color: #f00; /* Change color on hover */
+}
+#TotalPopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 550px;
+    height: 700px;
+    max-width: 90%;
+    padding: 20px;
+    background-color: #201f1f;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    animation: fadeIn 0.5s ease-in-out;
+    text-align: center;
+}
+#TotalPopupContent {
+    color: #fff;
+    line-height: 1.5;
+    
+}
+#TotalPopupContent h2{
+    font-weight: bold;
+    font-size: 1.5em;
+    
+}
+#TotalPopupContent p {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+#TotalPopupContent img{
+    width: 150px;
+    height: 150px;
+    margin-top: -30px;
+}
+#TotalCloseBtn {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 50px;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+#TotalCloseBtn:hover {
     color: #f00; /* Change color on hover */
 }
 

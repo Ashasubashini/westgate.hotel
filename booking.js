@@ -36,6 +36,7 @@ const promoCode = document.getElementById("promocode");
 
 const bookNowBtn = document.getElementById("BookNow");
 const adventureBookNowBtn = document.getElementById("AdventureBooknowBtn");
+const TotalBookingBtn = document.getElementById("TotalBookingCost");
 const loyaltyBtn = document.getElementById("loyalty");
 
 const roomAddToFavouriteBtn = document.getElementById("roomAddFavBtn");
@@ -50,9 +51,11 @@ const loyaltyShow = document.getElementById("loyaltyShow");
 const popup = document.getElementById("popup");
 const BookNowPopup = document.getElementById("BookNowPopup");
 const AdventurePopup = document.getElementById("AdventurePopup");
+const Totalpopup = document.getElementById("TotalPopup");
 const closeBtn = document.getElementById("closeBtn");
 const bookNowCloseBtn = document.getElementById("BookNowCloseBtn");
 const AdventureCloseBtn = document.getElementById("AdventureCloseBtn");
+const TotalcloseBtn = document.getElementById("TotalCloseBtn");
 
 let SingleRoom;
 let DoubleRoom;
@@ -64,6 +67,7 @@ let PromoDiscount;
 let loyaltyPointsAvailable;
 let loyaltyPoints;
 let totalCost;
+let OverallCost;
 let NumOfLocalAdults;
 let NumOfLocalKids;
 let NumOfForeignAdults;
@@ -119,7 +123,7 @@ bookNowBtn.addEventListener("click", function (event) {
         if (promoCode.value == "Promo123") {
             PromoDiscount = totalCost * (5 / 100);
             totalCost -= PromoDiscount;
-        }
+        } 
 
         output.innerText = totalCost;
         console.log(totalCost);
@@ -254,6 +258,67 @@ adventureBookNowBtn.addEventListener("click", function (event) {
     }
 });
 
+TotalBookingBtn.addEventListener("click", function (event) {
+    overallCost();
+    if (validate()) {
+        if (promoCode.value == "Promo123") {
+            PromoDiscount = totalCost * (5 / 100);
+            totalCost -= PromoDiscount;
+        } else  (adventureValidate())
+
+    
+
+        overlay.style.display = "block";
+        Totalpopup.style.display = "block";
+
+        const tableBody = document.querySelector("#TotalTable tbody");
+
+        const TotalTable = [
+            { [`single room * ${SingleRoom}`]: "LKR. " +SingleRoom * singleRoomPrice },
+            { [`DoubleRoom room * ${DoubleRoom}`]: "LKR. " +DoubleRoom * doubleRoomPrice },
+            { [`TripleRoom room * ${TripleRoom}`]: "LKR. " +TripleRoom * tripleRoomPrice },
+            { [`Kids * ${NumOfKids}`]: "LKR. " +NumOfKids * extraKids },
+            { [`extraBeds * ${NumOfExtraBeds}`]: "LKR. " +NumOfExtraBeds * extraBedPrice },
+            { [`Extra Requirements`]: extraRequirements.value},
+            { [`Discount Promo`]: "LKR. "  +PromoDiscount },
+            { [`local adults * ${NumOfLocalAdults}`]: "LKR. "+NumOfLocalAdults * LocalAdultPrice },
+            { [`local kids * ${NumOfLocalKids}`]: "LKR. "+NumOfLocalKids * LocalKidsPrice },
+            { [`foreign adults * ${NumOfForeignAdults}`]: "LKR. "+NumOfForeignAdults * ForeignAdultsPrice},
+            { [`local adults * ${NumOfForeignKIds}`]: "LKR. "+NumOfForeignKIds * ForeignKidsPrice},
+            { [`Guide Status`]: selectedGuide},
+            { [`Total`]: "LKR. " +OverallCost },
+
+        ];
+
+        tableBody.innerHTML = "";
+
+        // Loop through the data and create rows
+        TotalTable.forEach((dataObject) => {
+            for (const key in dataObject) {
+                if (dataObject.hasOwnProperty(key)) {
+                    const row = document.createElement("tr");
+
+                    // Create cell for header
+                    const headerCell = document.createElement("td");
+                    headerCell.textContent = key;
+                    row.appendChild(headerCell);
+
+                    // Create cell for value
+                    const valueCell = document.createElement("td");
+                    valueCell.textContent = dataObject[key];
+                    row.appendChild(valueCell);
+
+                    // Append the row to the table body
+                    tableBody.appendChild(row);
+                }
+            }
+        })
+        setTimeout(() => Totalpopup.classList.add("show"), 50);
+    } else {
+        return null;
+    }
+});
+
 loyaltyBtn.addEventListener("click", function () {
     loyalty = checkLoyalty();
     console.log("L: " + loyalty.loyaltyPoints);
@@ -291,7 +356,14 @@ AdventureCloseBtn.addEventListener("click", function (){
     overlay.style.display = "none";
     AdventurePopup.style.display = "none";
     AdventurePopup.classlist.remove("show");
-})
+});
+
+TotalcloseBtn.addEventListener("click", function (){
+    overlay.style.display = "none";
+    Totalpopup.style.display = "none";
+    Totalpopup.classlist.remove("show");
+});
+
 
 function initialise() {
     SingleRoom = 0;
@@ -349,6 +421,10 @@ function calculateAdventureCost() {
             NumOfForeignKIds * ForeignKidsPrice;
     }
     adventureOutput.innerText = AdventureCost;
+}
+function overallCost() {
+    OverallCost = totalCost + AdventureCost;
+    
 }
 
 function CheckRoomType() {
