@@ -261,10 +261,25 @@ adventureBookNowBtn.addEventListener("click", function (event) {
 TotalBookingBtn.addEventListener("click", function (event) {
     overallCost();
     if (validate()) {
+
+        console.log("ROOMS VALIDATED")
         if (promoCode.value == "Promo123") {
             PromoDiscount = totalCost * (5 / 100);
             totalCost -= PromoDiscount;
-        } else  (adventureValidate())
+        } else{
+            if(adventureValidate()){
+                console.log("ADVENTURE VALIDATED")
+            }
+        }
+
+        let selectedGuide = null;
+
+        for (var i = 0; i < guideStatus.length; i++) {
+            if (guideStatus[i].checked) {
+                selectedGuide = guideStatus[i].value;
+                break;  // Exit the loop once a selected radio button is found
+            }
+        }
 
     
 
@@ -272,6 +287,11 @@ TotalBookingBtn.addEventListener("click", function (event) {
         Totalpopup.style.display = "block";
 
         const tableBody = document.querySelector("#TotalTable tbody");
+
+        console.log("TOTAL")
+        console.log(`single room * ${SingleRoom}`+ "LKR. " +SingleRoom * singleRoomPrice)
+        console.log(`DoubleRoom room * ${DoubleRoom}`+ "LKR. " +DoubleRoom * doubleRoomPrice)
+        console.log(`Total`+ "LKR. " +OverallCost)
 
         const TotalTable = [
             { [`single room * ${SingleRoom}`]: "LKR. " +SingleRoom * singleRoomPrice },
@@ -315,6 +335,7 @@ TotalBookingBtn.addEventListener("click", function (event) {
         })
         setTimeout(() => Totalpopup.classList.add("show"), 50);
     } else {
+        console.log("Error Validating total cost")
         return null;
     }
 });

@@ -866,7 +866,7 @@ figure iframe {
     width: 550px;
     height: 700px;
     max-width: 90%;
-    padding: 20px;
+    padding: 10px;
     background-color: #201f1f;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -875,18 +875,20 @@ figure iframe {
     text-align: center;
 }
 #TotalPopupContent {
-    color: #fff;
-    line-height: 1.5;
+    color: #000;
+    line-height: 1em;
     
 }
 #TotalPopupContent h2{
     font-weight: bold;
     font-size: 1.5em;
+    color: #fff;
     
 }
 #TotalPopupContent p {
     font-weight: bold;
     font-size: 1.5em;
+    color: #fff;
 }
 #TotalPopupContent img{
     width: 150px;
